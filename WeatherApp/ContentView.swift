@@ -16,6 +16,11 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+//        .onAppear {
+//            Task {
+//               try await NetworkWeather().getWeather(city: "quito")
+//            }
+//        }
     }
 }
 
