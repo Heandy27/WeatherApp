@@ -1,15 +1,16 @@
 import Foundation
 import Combine
+import CoreLocation
 
 final class WeatherHomeViewModel: ObservableObject {
     @Published var weatherResult: WeatherModel = WeatherModel(weather: [Weather(id: 0, main: "", description: "", icon: "")], main: MainResult(temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, humidity: 0), name: "", sys: Sys(country: ""))
     @Published var cityText: String = ""
-    
+   
     var useCase: WeatherUseCaseProtocol
-    
+    var locationViewModel = LocationViewModel()
+   
     init(useCase: WeatherUseCaseProtocol = WeatherUseCase()) {
         self.useCase = useCase
-        
     }
     
     @MainActor
@@ -19,15 +20,25 @@ final class WeatherHomeViewModel: ObservableObject {
             //try await Task.sleep(nanoseconds: 2 * 1_000_000_000)
             
             let data = try await useCase.getWeather(city: cityText)
-        
             self.weatherResult = data
            
-            print("Weather data: \(data)") // Procesar el resultado aquí
+          //  print("Weather data: \(data)") // Procesar el resultado aquí
         } catch {
             print("Error fetching weather: \(error)")
         }
     }
     
+    
+    @MainActor
+    func getCurrentLocation() async {
+        do {
+            let data = try await useCase.getCurrentLocation(lon: locationViewModel.longitude, lat: locationViewModel.latitude)
+            self.weatherResult = data
+            //print(data)
+        } catch {
+            print("Error  fetching weather location \(error)")
+        }
+    }
     
     var idStringIcon: String {
         
@@ -48,8 +59,12 @@ final class WeatherHomeViewModel: ObservableObject {
             return "cloud.snow.fill"
         case 701...781:
             return "cloud.fog.fill"
+        case 800:
+            return "sun.max.fill"
+        case 801...804:
+            return "cloud.fill"
         default:
-            return "sun.max.circle.fill"
+            return "cloud.fill"
         }
     }
     
@@ -84,3 +99,5 @@ final class WeatherHomeViewModel: ObservableObject {
     }
     
 }
+
+

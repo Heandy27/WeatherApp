@@ -23,6 +23,7 @@
 		BF549F442D1CA595006E8EEC /* WeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF549F432D1CA590006E8EEC /* WeatherUseCase.swift */; };
 		BF549F472D1CA72C006E8EEC /* WeatherHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF549F462D1CA72C006E8EEC /* WeatherHomeView.swift */; };
 		BF549F492D1CA740006E8EEC /* WeatherHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF549F482D1CA73B006E8EEC /* WeatherHomeViewModel.swift */; };
+		BF63B3F12D23103B0002C93D /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63B3F02D2310370002C93D /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		BF549F432D1CA590006E8EEC /* WeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUseCase.swift; sourceTree = "<group>"; };
 		BF549F462D1CA72C006E8EEC /* WeatherHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeView.swift; sourceTree = "<group>"; };
 		BF549F482D1CA73B006E8EEC /* WeatherHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeViewModel.swift; sourceTree = "<group>"; };
+		BF63B3F02D2310370002C93D /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -192,6 +194,7 @@
 		BF549F152D1C870D006E8EEC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				BF63B3F02D2310370002C93D /* LocationViewModel.swift */,
 				BF549F482D1CA73B006E8EEC /* WeatherHomeViewModel.swift */,
 			);
 			path = ViewModels;
@@ -430,6 +433,7 @@
 				BF549F3E2D1CA4E4006E8EEC /* WeatherRepositoryProtocol.swift in Sources */,
 				BF549F492D1CA740006E8EEC /* WeatherHomeViewModel.swift in Sources */,
 				BF549F322D1C8BFF006E8EEC /* HttpResponseCode.swift in Sources */,
+				BF63B3F12D23103B0002C93D /* LocationViewModel.swift in Sources */,
 				BF549F2C2D1C8BC9006E8EEC /* ErrorApp.swift in Sources */,
 				BF549F422D1CA556006E8EEC /* WeatherUseCaseProtocol.swift in Sources */,
 				BF549F3A2D1C8D23006E8EEC /* WeatherModel.swift in Sources */,
@@ -601,6 +605,7 @@
 				DEVELOPMENT_TEAM = P5P768BLW3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need the location to get the current forecast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -630,6 +635,7 @@
 				DEVELOPMENT_TEAM = P5P768BLW3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need the location to get the current forecast";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

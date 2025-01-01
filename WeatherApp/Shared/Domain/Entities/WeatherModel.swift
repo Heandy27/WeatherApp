@@ -1,10 +1,16 @@
 import Foundation
 
 struct WeatherModel: Codable {
+   // let coord: Coord
     let weather: [Weather]
     let main: MainResult
     let name: String
     let sys: Sys
+}
+
+struct Coord: Codable {
+    let lon: Double
+    let lat: Double
 }
 
 struct Weather: Codable, Identifiable {
