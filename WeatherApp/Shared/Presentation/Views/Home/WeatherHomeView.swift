@@ -87,6 +87,7 @@ struct WeatherHomeView: View {
                     VStack {
                         Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
                             .foregroundStyle(.white)
+                            .font(.system(size: 20))
                         HStack {
                             Image(systemName: viewModel.idStringIcon)
                                 .font(.system(size: 80))

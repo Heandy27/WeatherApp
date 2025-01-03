@@ -8,12 +8,10 @@ final class WeatherHomeViewModel: ObservableObject {
     @Published var cityText: String = ""
    
     var useCase: WeatherUseCaseProtocol
-    var useCaseWeather5Days: Weather5DaysUseCaseProtocol
     var locationViewModel = LocationViewModel()
    
-    init(useCase: WeatherUseCaseProtocol = WeatherUseCase(), useCaseWeather5Days: Weather5DaysUseCaseProtocol = Weather5DaysUseCase()) {
+    init(useCase: WeatherUseCaseProtocol = WeatherUseCase()) {
         self.useCase = useCase
-        self.useCaseWeather5Days = useCaseWeather5Days
     }
     
     @MainActor

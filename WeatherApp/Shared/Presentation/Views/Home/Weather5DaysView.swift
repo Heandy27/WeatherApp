@@ -16,7 +16,6 @@ struct Weather5DaysView: View {
         VStack(spacing: 5) {
             Text(viewModel.formatDate(weatherData.dt_txt))
                 .font(.system(size: 20))
-                .bold()
             Image(systemName: viewModel.idStringIcon(weatherData.weather.first?.id ?? 0))
                 .font(.system(size: 25))
             Text(weatherData.weather.first?.main ?? "")
