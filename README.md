@@ -12,7 +12,7 @@ utilizando CoreLocation y la API REST de OpenWeatherMap.
 - **MVVM:** Se ha utilizado el patrón de diseño MVVM para organizar el código, separando la lógica de negocio (Model), la representación de la interfaz de usuario (View) y el manejo de los datos (ViewModel).
 - **Combine:** Implementación de Combine para manejar la reactividad de los datos.
 - **Async/Await:** Uso de async/await para realizar solicitudes a la API de manera eficiente.
-- **AppState:** Uso de estados en la aplicación para el manejo de errores.
+- **RootView:** Uso de estados en la aplicación para el manejo de errores.
 
 ## Tecnologías
 
