@@ -1,7 +1,7 @@
 import Foundation
 
 struct WeatherModel: Codable {
-   // let coord: Coord
+    let coord: Coord
     let weather: [Weather]
     let main: MainResult
     let name: String

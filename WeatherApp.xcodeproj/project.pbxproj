@@ -24,6 +24,14 @@
 		BF549F472D1CA72C006E8EEC /* WeatherHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF549F462D1CA72C006E8EEC /* WeatherHomeView.swift */; };
 		BF549F492D1CA740006E8EEC /* WeatherHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF549F482D1CA73B006E8EEC /* WeatherHomeViewModel.swift */; };
 		BF63B3F12D23103B0002C93D /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF63B3F02D2310370002C93D /* LocationViewModel.swift */; };
+		BF83B2AB2D25BB5F002001EB /* NetworkWeather5Days.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2AA2D25BB53002001EB /* NetworkWeather5Days.swift */; };
+		BF83B2AD2D25BBC5002001EB /* Weather5DaysModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2AC2D25BBBF002001EB /* Weather5DaysModel.swift */; };
+		BF83B2AF2D25D364002001EB /* Weather5DaysRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2AE2D25D35A002001EB /* Weather5DaysRepository.swift */; };
+		BF83B2B12D25D3C1002001EB /* Weather5DaysRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2B02D25D3B6002001EB /* Weather5DaysRepositoryProtocol.swift */; };
+		BF83B2B32D25D4D6002001EB /* Weather5DaysUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2B22D25D4CE002001EB /* Weather5DaysUseCaseProtocol.swift */; };
+		BF83B2B52D25D50D002001EB /* Weather5DaysUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2B42D25D506002001EB /* Weather5DaysUseCase.swift */; };
+		BF83B2B72D25D54A002001EB /* Weather5DaysViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2B62D25D543002001EB /* Weather5DaysViewModel.swift */; };
+		BF83B2B92D25D72E002001EB /* Weather5DaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF83B2B82D25D72E002001EB /* Weather5DaysView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +72,14 @@
 		BF549F462D1CA72C006E8EEC /* WeatherHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeView.swift; sourceTree = "<group>"; };
 		BF549F482D1CA73B006E8EEC /* WeatherHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHomeViewModel.swift; sourceTree = "<group>"; };
 		BF63B3F02D2310370002C93D /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		BF83B2AA2D25BB53002001EB /* NetworkWeather5Days.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWeather5Days.swift; sourceTree = "<group>"; };
+		BF83B2AC2D25BBBF002001EB /* Weather5DaysModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather5DaysModel.swift; sourceTree = "<group>"; };
+		BF83B2AE2D25D35A002001EB /* Weather5DaysRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather5DaysRepository.swift; sourceTree = "<group>"; };
+		BF83B2B02D25D3B6002001EB /* Weather5DaysRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather5DaysRepositoryProtocol.swift; sourceTree = "<group>"; };
+		BF83B2B22D25D4CE002001EB /* Weather5DaysUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather5DaysUseCaseProtocol.swift; sourceTree = "<group>"; };
+		BF83B2B42D25D506002001EB /* Weather5DaysUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather5DaysUseCase.swift; sourceTree = "<group>"; };
+		BF83B2B62D25D543002001EB /* Weather5DaysViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather5DaysViewModel.swift; sourceTree = "<group>"; };
+		BF83B2B82D25D72E002001EB /* Weather5DaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather5DaysView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -194,6 +210,7 @@
 		BF549F152D1C870D006E8EEC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				BF83B2B62D25D543002001EB /* Weather5DaysViewModel.swift */,
 				BF63B3F02D2310370002C93D /* LocationViewModel.swift */,
 				BF549F482D1CA73B006E8EEC /* WeatherHomeViewModel.swift */,
 			);
@@ -203,6 +220,7 @@
 		BF549F162D1C8715006E8EEC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				BF83B2AA2D25BB53002001EB /* NetworkWeather5Days.swift */,
 				BF549F3B2D1C9F47006E8EEC /* NetworkWeather.swift */,
 				BF549F172D1C871C006E8EEC /* BaseNetwork */,
 			);
@@ -222,6 +240,7 @@
 		BF549F1E2D1C8743006E8EEC /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				BF83B2AE2D25D35A002001EB /* Weather5DaysRepository.swift */,
 				BF549F3F2D1CA50D006E8EEC /* WeatherRepository.swift */,
 			);
 			path = Repository;
@@ -239,6 +258,7 @@
 		BF549F202D1C8765006E8EEC /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BF83B2AC2D25BBBF002001EB /* Weather5DaysModel.swift */,
 				BF549F392D1C8D1E006E8EEC /* WeatherModel.swift */,
 			);
 			path = Entities;
@@ -255,6 +275,7 @@
 		BF549F222D1C877E006E8EEC /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				BF83B2B42D25D506002001EB /* Weather5DaysUseCase.swift */,
 				BF549F432D1CA590006E8EEC /* WeatherUseCase.swift */,
 			);
 			path = UseCases;
@@ -264,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				BF549F462D1CA72C006E8EEC /* WeatherHomeView.swift */,
+				BF83B2B82D25D72E002001EB /* Weather5DaysView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -271,6 +293,8 @@
 		BFC014472D1DF4C200EC7CC1 /* Weather 5Days  */ = {
 			isa = PBXGroup;
 			children = (
+				BF83B2B22D25D4CE002001EB /* Weather5DaysUseCaseProtocol.swift */,
+				BF83B2B02D25D3B6002001EB /* Weather5DaysRepositoryProtocol.swift */,
 			);
 			path = "Weather 5Days ";
 			sourceTree = "<group>";
@@ -430,13 +454,21 @@
 				BF549F302D1C8BF5006E8EEC /* HttpMethods.swift in Sources */,
 				BF549F3C2D1C9F4C006E8EEC /* NetworkWeather.swift in Sources */,
 				BF549F402D1CA511006E8EEC /* WeatherRepository.swift in Sources */,
+				BF83B2B32D25D4D6002001EB /* Weather5DaysUseCaseProtocol.swift in Sources */,
+				BF83B2B72D25D54A002001EB /* Weather5DaysViewModel.swift in Sources */,
+				BF83B2B52D25D50D002001EB /* Weather5DaysUseCase.swift in Sources */,
 				BF549F3E2D1CA4E4006E8EEC /* WeatherRepositoryProtocol.swift in Sources */,
+				BF83B2AB2D25BB5F002001EB /* NetworkWeather5Days.swift in Sources */,
 				BF549F492D1CA740006E8EEC /* WeatherHomeViewModel.swift in Sources */,
 				BF549F322D1C8BFF006E8EEC /* HttpResponseCode.swift in Sources */,
 				BF63B3F12D23103B0002C93D /* LocationViewModel.swift in Sources */,
+				BF83B2B12D25D3C1002001EB /* Weather5DaysRepositoryProtocol.swift in Sources */,
 				BF549F2C2D1C8BC9006E8EEC /* ErrorApp.swift in Sources */,
+				BF83B2AF2D25D364002001EB /* Weather5DaysRepository.swift in Sources */,
+				BF83B2AD2D25BBC5002001EB /* Weather5DaysModel.swift in Sources */,
 				BF549F422D1CA556006E8EEC /* WeatherUseCaseProtocol.swift in Sources */,
 				BF549F3A2D1C8D23006E8EEC /* WeatherModel.swift in Sources */,
+				BF83B2B92D25D72E002001EB /* Weather5DaysView.swift in Sources */,
 				BF549F442D1CA595006E8EEC /* WeatherUseCase.swift in Sources */,
 				BF549F0C2D1C86E2006E8EEC /* ContentView.swift in Sources */,
 				BF549F242D1C88D6006E8EEC /* ConstantsApp.swift in Sources */,

@@ -3,14 +3,17 @@ import Combine
 import CoreLocation
 
 final class WeatherHomeViewModel: ObservableObject {
-    @Published var weatherResult: WeatherModel = WeatherModel(weather: [Weather(id: 0, main: "", description: "", icon: "")], main: MainResult(temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, humidity: 0), name: "", sys: Sys(country: ""))
+    @Published var weatherResult: WeatherModel = WeatherModel(coord: Coord(lon: 0.0, lat: 0.0), weather: [Weather(id: 0, main: "", description: "", icon: "")], main: MainResult(temp: 0, feels_like: 0, temp_min: 0, temp_max: 0, humidity: 0), name: "", sys: Sys(country: ""))
+    @Published var weather5DaysResult: [ListResponse] = []
     @Published var cityText: String = ""
    
     var useCase: WeatherUseCaseProtocol
+    var useCaseWeather5Days: Weather5DaysUseCaseProtocol
     var locationViewModel = LocationViewModel()
    
-    init(useCase: WeatherUseCaseProtocol = WeatherUseCase()) {
+    init(useCase: WeatherUseCaseProtocol = WeatherUseCase(), useCaseWeather5Days: Weather5DaysUseCaseProtocol = Weather5DaysUseCase()) {
         self.useCase = useCase
+        self.useCaseWeather5Days = useCaseWeather5Days
     }
     
     @MainActor
@@ -39,6 +42,7 @@ final class WeatherHomeViewModel: ObservableObject {
             print("Error  fetching weather location \(error)")
         }
     }
+    
     
     var idStringIcon: String {
         
@@ -69,19 +73,19 @@ final class WeatherHomeViewModel: ObservableObject {
     }
     
     var tempString: String {
-        return String(format: "%.0f°", weatherResult.main.temp)
+        return String(format: "%.0f°C", weatherResult.main.temp)
     }
     
     var tempMaxString: String {
-        return String(format: "%.0f°", weatherResult.main.temp_max)
+        return String(format: "%.0f°C", weatherResult.main.temp_max)
     }
     
     var tempMinString: String {
-        return String(format: "%.0f°", weatherResult.main.temp_min)
+        return String(format: "%.0f°C", weatherResult.main.temp_min)
     }
     
     var tempFeelsLikeString: String {
-        return String(format: "%.0f°", weatherResult.main.feels_like)
+        return String(format: "%.0f°C", weatherResult.main.feels_like)
     }
     
     var cityCountryText: String {

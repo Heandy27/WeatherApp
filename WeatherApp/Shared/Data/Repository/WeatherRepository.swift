@@ -2,8 +2,6 @@ import Foundation
 
 final class WeatherRepository: WeatherRepositoryProtocol {
     
-    
-    
     var network: NetworkWeatherProtocol
     
     init(network: NetworkWeatherProtocol = NetworkWeather()) {

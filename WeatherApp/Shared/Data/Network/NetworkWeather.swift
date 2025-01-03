@@ -32,8 +32,6 @@ final class NetworkWeather: NetworkWeatherProtocol {
         } catch {
             throw ErrorApp.errorParsingData
         }
-        
-       
     }
     
     func getCurrentLocation(lon: Double, lat: Double) async throws -> WeatherModel {
@@ -61,6 +59,4 @@ final class NetworkWeather: NetworkWeatherProtocol {
             throw ErrorApp.errorParsingData
         }
     }
-    
-    
 }

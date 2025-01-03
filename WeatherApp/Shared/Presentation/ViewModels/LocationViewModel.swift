@@ -25,7 +25,4 @@ final class LocationViewModel: NSObject, CLLocationManagerDelegate, ObservableOb
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print(error)
     }
-    
-    
-   
 }

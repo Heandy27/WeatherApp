@@ -11,7 +11,6 @@ enum ErrorApp: Error, CustomStringConvertible {
     
     var description: String {
         switch self {
-            
         case .requestWasNil:
             return "Error creating request"
         case .errorFromServer(error: let error):

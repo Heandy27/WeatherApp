@@ -1,8 +1,7 @@
 import Foundation
 
 final class WeatherUseCase: WeatherUseCaseProtocol {
-  
-    
+
     var repo: WeatherRepositoryProtocol
     
     init(repo: WeatherRepositoryProtocol = WeatherRepository()) {

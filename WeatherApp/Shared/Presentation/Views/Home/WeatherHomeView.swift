@@ -12,6 +12,11 @@ struct WeatherHomeView: View {
     @StateObject var viewModel: WeatherHomeViewModel
   //  @StateObject var locationManager = LocationManager()
     @StateObject var locationViewModel = LocationViewModel()
+    @StateObject var weather5DaysViewModel = Weather5DaysViewModel()
+    
+    let gridItem = [
+        GridItem(.flexible())
+    ]
     
     
     var body: some View {
@@ -19,6 +24,7 @@ struct WeatherHomeView: View {
      
             NavigationView {
                 VStack {
+                    // First Section searchbar and location
                     HStack {
                         
                         TextField("", text: $viewModel.cityText, prompt:Text("Search...").foregroundStyle(Color(.gray).opacity(0.4)))
@@ -27,6 +33,8 @@ struct WeatherHomeView: View {
                             .onSubmit {
                                 Task {
                                     await viewModel.getWeather()
+                                    await weather5DaysViewModel.getWeather5Days(lat: viewModel.weatherResult.coord.lat, lon: viewModel.weatherResult.coord.lon)
+                                    
                                 }
                             }
                         
@@ -49,6 +57,7 @@ struct WeatherHomeView: View {
                             viewModel.cityText = ""
                             Task {
                                 await  viewModel.getCurrentLocation()
+                                await weather5DaysViewModel.getWeather5Days(lat: viewModel.weatherResult.coord.lat, lon: viewModel.weatherResult.coord.lon)
                             }
                         } label: {
                             Image(systemName: "location.circle.fill")
@@ -62,7 +71,7 @@ struct WeatherHomeView: View {
                     .padding(.bottom, 5)
                     
                     
-                    
+                    // Location Icon with city and country
                     HStack {
                         Image(systemName: "mappin.circle.fill")
                             .font(.system(size: 30))
@@ -74,6 +83,7 @@ struct WeatherHomeView: View {
                         Spacer()
                     }
                     
+                    // Second Section: Today Forecast, feels like, temp min, temp max
                     VStack {
                         Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
                             .foregroundStyle(.white)
@@ -126,7 +136,7 @@ struct WeatherHomeView: View {
                         .foregroundStyle(.white)
                         
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 350)
+                    .frame(maxWidth: .infinity, maxHeight: 425)
                     .background(LinearGradient(gradient: Gradient(colors: [
                         Color(red: 168/255, green: 154/255, blue: 225/255),
                         Color(red: 118/255, green: 96/255, blue: 244/255)
@@ -136,8 +146,15 @@ struct WeatherHomeView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(radius: 10)
                     
-                    
-                    
+                    // Third Section, forecast for 5 days per 3 hours
+                    ScrollView(.horizontal) {
+                        LazyHGrid(rows: gridItem, spacing: 20) {
+                            ForEach(weather5DaysViewModel.weatherData, id: \.dt) {item in
+                                Weather5DaysView(weatherData: item)
+                            }
+                        }
+                    }
+                    .padding(.top, 10)
                     
                     Spacer()
                 }
@@ -147,6 +164,7 @@ struct WeatherHomeView: View {
                 .onAppear {
                     Task {
                         await viewModel.getCurrentLocation()
+                        await weather5DaysViewModel.getWeather5Days(lat: viewModel.weatherResult.coord.lat, lon: viewModel.weatherResult.coord.lon)
                     }
                 }
             }
