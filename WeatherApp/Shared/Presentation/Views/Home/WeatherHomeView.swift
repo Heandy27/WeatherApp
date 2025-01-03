@@ -21,8 +21,9 @@ struct WeatherHomeView: View {
     
     var body: some View {
         
-     
+       
             NavigationView {
+                ScrollView {
                 VStack {
                     // First Section searchbar and location
                     HStack {
@@ -64,7 +65,7 @@ struct WeatherHomeView: View {
                                 .foregroundStyle(Color(red: 128/255, green: 97/255, blue: 225/255))
                                 .font(.system(size: 30))
                         }
-
+                        
                         
                         
                     }
@@ -137,7 +138,9 @@ struct WeatherHomeView: View {
                         .foregroundStyle(.white)
                         
                     }
-                    .frame(maxWidth: .infinity, maxHeight: 425)
+                    .padding()
+                    .padding(.vertical, 15)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(LinearGradient(gradient: Gradient(colors: [
                         Color(red: 168/255, green: 154/255, blue: 225/255),
                         Color(red: 118/255, green: 96/255, blue: 244/255)
@@ -146,7 +149,7 @@ struct WeatherHomeView: View {
                                                endPoint: .bottomLeading))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .shadow(radius: 10)
-                    
+                }
                     // Third Section, forecast for 5 days per 3 hours
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: gridItem, spacing: 20) {
@@ -160,7 +163,7 @@ struct WeatherHomeView: View {
                     Spacer()
                 }
                 
-                .navigationTitle("Look a City")
+                .navigationTitle("Search a City")
                 .padding()
                 .onAppear {
                     Task {
@@ -170,6 +173,9 @@ struct WeatherHomeView: View {
                 }
             }
        
+        
+        
+        
     }
 }
 

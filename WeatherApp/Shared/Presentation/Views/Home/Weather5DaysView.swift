@@ -25,7 +25,7 @@ struct Weather5DaysView: View {
         }
         .padding()
         .foregroundStyle(.white)
-        .frame(maxWidth: 350, maxHeight: 350)
+        .frame(maxWidth: 350)
         .background(LinearGradient(gradient: Gradient(colors: [
             Color(red: 168/255, green: 154/255, blue: 225/255),
             Color(red: 118/255, green: 96/255, blue: 244/255)
