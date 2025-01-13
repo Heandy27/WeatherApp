@@ -1,20 +1,19 @@
 # Weather App
 
-Weather App es una aplicación creada con SwiftUI y está conectada a una API REST para mostrar el pronóstico de cualquier ciudad y tu ubicación actual,
-utilizando CoreLocation y la API REST de OpenWeatherMap.
+Weather App is an app created with SwiftUI and connected to a REST API to display the forecast for any city and your current location, using CoreLocation and the OpenWeatherMap REST API.
 
 [![weather-App.png](https://i.postimg.cc/Nj3rYDLj/weather-App.png)](https://postimg.cc/sMJ24ppk)
 
-## Características
+## Features
 
-- **Grid:** Organiza vistas de manera ordenada en filas y columnas.
-- **API REST:** La aplicación interactúa con una API REST para obtener información sobre el clima de cualquier ciudad del mundo.
-- **MVVM:** Se ha utilizado el patrón de diseño MVVM para organizar el código, separando la lógica de negocio (Model), la representación de la interfaz de usuario (View) y el manejo de los datos (ViewModel).
-- **Combine:** Implementación de Combine para manejar la reactividad de los datos.
-- **Async/Await:** Uso de async/await para realizar solicitudes a la API de manera eficiente.
-- **RootView:** Uso de estados en la aplicación para el manejo de errores.
+- **Grid:** Organizes views in an orderly manner into rows and columns.
+- **API REST:** The app interacts with a REST API to fetch information about characters and their series.
+- **MVVM:** The MVVM design pattern is used to organize the code, separating business logic (Model), user interface representation (View), and data handling (ViewModel).
+- **Combine:** Implementation of Combine to handle data reactivity.
+- **Async/Await:** Usage of async/await to make API requests efficiently.
+- **RootView:** Usage of states in the app to handle errors.
 
-## Tecnologías
+## Technologies
 
 - SwiftUI
 - Xcode
@@ -24,25 +23,25 @@ utilizando CoreLocation y la API REST de OpenWeatherMap.
 - Combine
 - Async/Await
 
-## Instalación
+## Installation
 
-1. Clona este repositorio:
+1. Clone this repository:
    ```bash
    https://github.com/Heandy27/WeatherApp.git
    ```
-2. Abre el proyecto en Xcode.
-3. Ejecuta el proyecto en un simulador o dispositivo físico.
+2. Open the project in Xcode.
+3. Run the project on a simulator or physical device.
 
-## Uso
+## Usage
 
-### Pronóstico App:
-Al iniciar la aplicación, podrás ver tu actual ubicación.
+### Forecast App:
+When you open the app, you will see your current location.
 
-### Información de personajes:
-Escribe cualquier ciudad para poder ver la información más detallada del clima.
+### Weather information:
+Type any city to see more detailed weather information.
 
 <hr></hr>
-Gracias por revisar mi app. Si quieres saber más sobre mí o mi trabajo, puedes encontrarme en estas redes social:<br></br>
+Thank you for reviewing my app. If you want to know more about me or my work, you can find me on these social networks:<br></br>
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/heandy27/) 
 [![GitHub](https://img.shields.io/badge/GitHub-%23121011.svg?logo=github&logoColor=white)](https://github.com/Heandy27)
