@@ -10,8 +10,26 @@ final class LocationViewModel: NSObject, CLLocationManagerDelegate, ObservableOb
     override init() {
         super.init()
         locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+            
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+            break
+        case .restricted:
+            print("restricted")
+        case .denied:
+            print("Error")
+        case .authorizedAlways:
+            print("Always authorizadededded")
+        case .authorizedWhenInUse:
+            locationManager.requestLocation()
+            break
+        @unknown default:
+            break
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

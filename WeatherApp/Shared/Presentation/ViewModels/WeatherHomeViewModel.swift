@@ -12,6 +12,9 @@ final class WeatherHomeViewModel: ObservableObject {
    
     init(useCase: WeatherUseCaseProtocol = WeatherUseCase()) {
         self.useCase = useCase
+        Task {
+            await getCurrentLocation()
+        }
     }
     
     @MainActor
@@ -35,7 +38,7 @@ final class WeatherHomeViewModel: ObservableObject {
         do {
             let data = try await useCase.getCurrentLocation(lon: locationViewModel.longitude, lat: locationViewModel.latitude)
             self.weatherResult = data
-            //print(data)
+            print(data)
         } catch {
             print("Error  fetching weather location \(error)")
         }

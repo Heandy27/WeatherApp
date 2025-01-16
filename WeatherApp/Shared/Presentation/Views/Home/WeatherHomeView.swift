@@ -111,27 +111,27 @@ struct WeatherHomeView: View {
                                     .font(.system(size: 40))
                                 
                                 Text("Feels like")
-                                    .font(.system(size: 18))
+                                    .font(.system(size: 16))
                                 Text(viewModel.tempFeelsLikeString)
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 18))
                             }
                             .padding()
                             VStack {
                                 Image(systemName: "arrow.down.circle.fill")
                                     .font(.system(size: 40))
                                 Text("Temp min")
-                                    .font(.system(size: 18))
+                                    .font(.system(size: 16))
                                 Text(viewModel.tempMinString)
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 18))
                             }
                             .padding()
                             VStack {
                                 Image(systemName: "arrow.up.circle.fill")
                                     .font(.system(size: 40))
                                 Text("Temp max")
-                                    .font(.system(size: 18))
+                                    .font(.system(size: 16))
                                 Text(viewModel.tempMaxString)
-                                    .font(.system(size: 20))
+                                    .font(.system(size: 18))
                             }
                             .padding()
                         }
@@ -167,7 +167,7 @@ struct WeatherHomeView: View {
                 .padding()
                 .onAppear {
                     Task {
-                        await viewModel.getCurrentLocation()
+                       // await viewModel.getCurrentLocation()
                         await weather5DaysViewModel.getWeather5Days(lat: viewModel.weatherResult.coord.lat, lon: viewModel.weatherResult.coord.lon)
                     }
                 }
